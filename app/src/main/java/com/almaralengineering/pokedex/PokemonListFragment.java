@@ -72,17 +72,42 @@ public class PokemonListFragment extends Fragment {
         ListView pokemonListView = (ListView) view.findViewById(R.id.pokemon_listView);
 
         ArrayList<Pokemon> pokemonList = new ArrayList<>();
-        pokemonList.add(new Pokemon("1", "Bulbasaur", Pokemon.Type.PLANT));
-        pokemonList.add(new Pokemon("2", "Ivysaur", Pokemon.Type.PLANT));
-        pokemonList.add(new Pokemon("3", "Venuasaur", Pokemon.Type.PLANT));
-        pokemonList.add(new Pokemon("4", "Charmander", Pokemon.Type.FIRE));
-        pokemonList.add(new Pokemon("5", "Charmeleon", Pokemon.Type.FIRE));
-        pokemonList.add(new Pokemon("6", "Charizard", Pokemon.Type.FIRE));
-        pokemonList.add(new Pokemon("7", "Squirtle", Pokemon.Type.WATER));
-        pokemonList.add(new Pokemon("8", "Wartortle", Pokemon.Type.WATER));
-        pokemonList.add(new Pokemon("9", "Blastoise", Pokemon.Type.WATER));
-        pokemonList.add(new Pokemon("25", "Pikachu", Pokemon.Type.ELECTRIC));
-        pokemonList.add(new Pokemon("26", "Raichu", Pokemon.Type.ELECTRIC));
+        Stats bulbasaurStats = new Stats("45", "49", "49", "65");
+        Stats ivysaurStats = new Stats("60", "62", "63", "80");
+        Stats venusaurStats = new Stats("80", "82", "83", "100");
+        Stats charmanderStats = new Stats("39", "52", "43", "50");
+        Stats charmeleonStats = new Stats("58", "64", "58", "65");
+        Stats charizardStats = new Stats("78", "84", "78", "100");
+        Stats squirtleStats = new Stats("44", "48", "65", "43");
+        Stats wartortleStats = new Stats("59", "63", "80", "58");
+        Stats blastoiseStats = new Stats("79", "83", "100", "78");
+        Stats pikachuStats = new Stats("35", "55", "40", "90");
+        Stats raichuStats = new Stats("60", "90", "55", "100");
+
+
+
+        pokemonList.add(new Pokemon("1", "Bulbasaur", "http://cdn.bulbagarden.net/upload/thumb/1/19/Ash_Bulbasaur.png/245px-Ash_Bulbasaur.png",
+                R.raw.bulbasaur, Pokemon.Type.PLANT));
+        pokemonList.add(new Pokemon("2", "Ivysaur", "http://vignette1.wikia.nocookie.net/es.pokemon/images/3/3a/EP893_Ivysaur_de_Xana_(2).png/revision/latest?cb=20151002171614",
+                R.raw.ivysaur, Pokemon.Type.PLANT));
+        pokemonList.add(new Pokemon("3", "Venuasaur","http://vignette1.wikia.nocookie.net/es.pokemon/images/6/67/EP428_Venusaur_de_Jeremy.png",
+                R.raw.venusaur, Pokemon.Type.PLANT));
+        pokemonList.add(new Pokemon("4", "Charmander", "http://cdn.bulbagarden.net/upload/thumb/7/75/Red_Charmander_PO.png/250px-Red_Charmander_PO.png",
+                R.raw.charmander, Pokemon.Type.FIRE));
+        pokemonList.add(new Pokemon("5", "Charmeleon", "http://vignette2.wikia.nocookie.net/es.pokemon/images/6/66/EP778_Charmeleon_de_Ash.png/revision/latest?cb=20130311103442",
+                R.raw.charmeleon, Pokemon.Type.FIRE));
+        pokemonList.add(new Pokemon("6", "Charizard", "http://vignette2.wikia.nocookie.net/es.pokemon/images/e/e7/SME02_Charizard_de_Alain.png/revision/latest?cb=20151026181408",
+                R.raw.charizard, Pokemon.Type.FIRE));
+        pokemonList.add(new Pokemon("7", "Squirtle", "http://cdn.bulbagarden.net/upload/thumb/8/8c/Tierno_Squirtle.png/250px-Tierno_Squirtle.png",
+                R.raw.squirtle, Pokemon.Type.WATER));
+        pokemonList.add(new Pokemon("8", "Wartortle", "http://vignette1.wikia.nocookie.net/es.pokemon/images/c/c1/EP869_Wartortle_de_Benigno.png/revision/latest?cb=20150327182409",
+                R.raw.wartortle, Pokemon.Type.WATER));
+        pokemonList.add(new Pokemon("9", "Blastoise", "http://cdn.bulbagarden.net/upload/thumb/0/05/Siebold_Mega_Blastoise.png/250px-Siebold_Mega_Blastoise.png",
+                R.raw.blastoise, Pokemon.Type.WATER));
+        pokemonList.add(new Pokemon("25", "Pikachu", "http://cdn.bulbagarden.net/upload/thumb/f/fd/Red_Pikachu_PO.png/220px-Red_Pikachu_PO.png",
+                R.raw.pikachu, Pokemon.Type.ELECTRIC));
+        pokemonList.add(new Pokemon("26", "Raichu", "http://cdn.bulbagarden.net/upload/thumb/4/49/Tierno_Raichu.png/250px-Tierno_Raichu.png",
+                R.raw.raichu, Pokemon.Type.ELECTRIC));
 
         final PokemonListAdapter adapter = new PokemonListAdapter(getActivity(), R.layout.pokemon_list_item,
                 pokemonList);
@@ -131,5 +156,7 @@ public class PokemonListFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         void onPokemonSelected(Pokemon pokemon);
+
+        void onClick(View view);
     }
 }

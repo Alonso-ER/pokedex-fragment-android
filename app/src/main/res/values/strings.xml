@@ -3,4 +3,10 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="activity_main_stats_button">STATS</string>
+    <string name="activity_main_image_color">IMAGE</string>
+    <string name="fragment_stats_hp">Hp</string>
+    <string name="fragment_stats_atk">Attack</string>
+    <string name="fragment_stats_def">Defence</string>
+    <string name="fragment_stats_sp">Speed</string>
 </resources>
